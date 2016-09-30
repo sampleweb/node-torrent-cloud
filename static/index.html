@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Torrent Cloud</title>
+		<title>DLzone Torrent Downloader</title>
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.3/semantic.min.css">
 		<link rel="stylesheet" type="text/css" href="app.css">
@@ -12,7 +12,7 @@
 		<!-- TITLE ===================== -->
 		<div class="title">
 			<h2>
-				<a href="https://github.com/jpillora/node-torrent-cloud" target="_blank"
+				<a href="https://www.dlzone.in" target="_blank"
 					ng-init="logoHover = false"
 					ng-mouseover="logoHover = true"
 					ng-mouseleave="logoHover = false">
@@ -48,7 +48,7 @@
 
 			<div class="omni ui fluid icon input">
 				<input
-					placeholder="Enter search query, torrent URL or magnet URI"
+					placeholder="Search or Paste a torrent/magnet URL"
 					ng-model="omni"
 					ng-change="parse()"
 					ng-enter="magnet && torrentsAPI('load', {magnet:omni}) || searchList()"/>
@@ -176,7 +176,7 @@
 		</div>
 
 		<div ng-if="!data.torrents || data.torrents.length == 0" class="ui message nodownloads">
-			<p>Add torrents above</p>
+			<p>Add torrents above to download</p>
 		</div>
 
  		<div ng-repeat="t in data.torrents"
@@ -248,7 +248,7 @@
 				</div>
 
 				<div ng-if="!t.open" class="row stopped"><div class="column">
-					This torrent is inactive. Press the green power button to reactivate or the red trash can to remove it.
+					This torrent is inactive. Press the green button to reactivate or the red button to remove it.
 				</div></div>
 
 				<div class="row" ng-show="t.open"><div class="column">
